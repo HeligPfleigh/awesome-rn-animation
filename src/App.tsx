@@ -8,13 +8,13 @@ const Drawer = createDrawerNavigator<RootParamsList>();
 import {RootParamsList} from './navigation/types';
 import {NavigatorMap} from './navigation/NavigatorMap';
 import CircularProgress from './screens/CircularProgress';
-// import DnDList from './screens/DnDList';
+import DnDList from './screens/DnDList';
 import DragAndSnap from './screens/DragAndSnap';
 
 function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName={NavigatorMap.DragAndSnap}>
+      <Drawer.Navigator initialRouteName={NavigatorMap.DnDList}>
         <Drawer.Screen
           name={NavigatorMap.CircularProgress}
           component={CircularProgress}
@@ -23,7 +23,7 @@ function App() {
           name={NavigatorMap.DragAndSnap}
           component={DragAndSnap}
         />
-        {/* <Drawer.Screen name={NavigatorMap.DnDList} component={DnDList} /> */}
+        <Drawer.Screen name={NavigatorMap.DnDList} component={DnDList} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
