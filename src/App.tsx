@@ -10,11 +10,12 @@ import {NavigatorMap} from './navigation/NavigatorMap';
 import CircularProgress from './screens/CircularProgress';
 import DnDList from './screens/DnDList';
 import DragAndSnap from './screens/DragAndSnap';
+import Ripple from './screens/Ripple';
 
 function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator initialRouteName={NavigatorMap.DnDList}>
+      <Drawer.Navigator initialRouteName={NavigatorMap.Ripple}>
         <Drawer.Screen
           name={NavigatorMap.CircularProgress}
           component={CircularProgress}
@@ -24,6 +25,7 @@ function App() {
           component={DragAndSnap}
         />
         <Drawer.Screen name={NavigatorMap.DnDList} component={DnDList} />
+        <Drawer.Screen name={NavigatorMap.Ripple} component={Ripple} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
