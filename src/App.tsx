@@ -1,23 +1,30 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 import 'react-native-gesture-handler';
 
-const Stack = createStackNavigator<RootParamsList>();
+const Drawer = createDrawerNavigator<RootParamsList>();
 
 import {RootParamsList} from './navigation/types';
 import {NavigatorMap} from './navigation/NavigatorMap';
 import CircularProgress from './screens/CircularProgress';
+// import DnDList from './screens/DnDList';
+import DragAndSnap from './screens/DragAndSnap';
 
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator headerMode="none">
-        <Stack.Screen
+      <Drawer.Navigator initialRouteName={NavigatorMap.DragAndSnap}>
+        <Drawer.Screen
           name={NavigatorMap.CircularProgress}
           component={CircularProgress}
         />
-      </Stack.Navigator>
+        <Drawer.Screen
+          name={NavigatorMap.DragAndSnap}
+          component={DragAndSnap}
+        />
+        {/* <Drawer.Screen name={NavigatorMap.DnDList} component={DnDList} /> */}
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 }
